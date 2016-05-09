@@ -41,6 +41,11 @@ public class Snail extends JComponent implements Runnable, ActionListener
 		Grass grass = this.controlVariable.getFieldsArray().get(index);
 		return grass;
 	}	
+	private int increaseAppetite()
+	{
+		return this.apttetie+=1;
+	}
+	
 	public Meadow getMeadow()
 	{
 		return controlVariable;
@@ -76,7 +81,7 @@ public class Snail extends JComponent implements Runnable, ActionListener
 	public String toString() {
 		return "Snail [snailId= " + snailId + " x= " + x + " y= " + y + "]\n";
 	}
-
+	private int apttetie = 0;
 	private Color color = new Color(12,53,201);
 	private Random randomGenerator = new Random();
 	private Meadow controlVariable;

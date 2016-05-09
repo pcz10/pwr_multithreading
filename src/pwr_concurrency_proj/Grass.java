@@ -38,11 +38,13 @@ public class Grass extends JComponent
 		return "Grass [x=" + x + ", y=" + y + ", id=" + id + ", color=" + color + "]\n";
 	}
 	
-	public Color changeGrassLevel()
+	public void changeGrassLevel()
 	{
 		for(Color color : grassColors)
-			this.color = color;
-		return color;
+			{
+				this.color = color;
+				repaint();
+			}
 	}
 
 	private static int idHelper = 1;

@@ -50,6 +50,12 @@ public class Meadow extends JComponent
 			g2.setColor(this.snailsArray.get(i).getColor());
 			g2.fillOval(this.snailsArray.get(i).getX(), this.snailsArray.get(i).getY(), 64, 64);
 		}
+		
+		for(Grass grass : grassFieldsArray)
+		{
+			if(grass.isTaken())
+				grass.changeGrassLevel();
+		}
 	}
 
 
@@ -62,14 +68,12 @@ public class Meadow extends JComponent
 		return snailsArray;
 	}
 	
-
-
 	public Meadow meadow;
 	private JButton addSnailButton = new JButton("Add snail");
 	private ArrayList<Snail> snailsArray = new ArrayList<>();
 	private ArrayList<Grass> grassFieldsArray = new ArrayList<>();
-	public static final int MEADOW_WIDTH = 640;
+	public static final int MEADOW_WIDTH = 642;
 	public static final int FRAME_WIDTH = 880;
-	public static final int FRAME_HEIGHT = 640;
+	public static final int FRAME_HEIGHT = 616;
 
 }
