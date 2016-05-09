@@ -9,7 +9,7 @@ import java.util.Random;
 
 import javax.swing.JComponent;
 
-public class Snail extends JComponent implements Runnable,ActionListener
+public class Snail extends JComponent implements Runnable, ActionListener
 {
 	public Snail(Meadow meadow)
 	{
@@ -19,7 +19,6 @@ public class Snail extends JComponent implements Runnable,ActionListener
 		generateField();
 		this.controlVariable.getSnailsArray().add(this);
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
@@ -36,14 +35,12 @@ public class Snail extends JComponent implements Runnable,ActionListener
 		this.y = grass.getY();
 		return grass;
 	}
-
 	private Grass generateGrassField() 
 	{
 		int index = randomGenerator.nextInt(this.getMeadow().getFieldsArray().size());
 		Grass grass = this.controlVariable.getFieldsArray().get(index);
 		return grass;
-	}
-	
+	}	
 	public Meadow getMeadow()
 	{
 		return controlVariable;
@@ -68,7 +65,6 @@ public class Snail extends JComponent implements Runnable,ActionListener
 	{
 		return color;
 	}
-
 	
 	@Override
 	public void run() 
